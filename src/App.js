@@ -1,23 +1,20 @@
-import booksData from './data/booksData';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Book from './components/Book';
-import AddBook from './components/AddBook';
+import Books from './pages/Books';
+import Categories from './pages/Categories';
+import Error from './pages/Error';
 
 const App = () => (
-  <>
+  <Router>
     <Navbar />
-    {booksData.map((e) => (
-      <Book
-        key={e.id}
-        title={e.title}
-        author={e.author}
-        genre={e.genre}
-        currentChapter={e.currentChapter}
-        progress={e.progress}
-      />
-    ))}
-    <AddBook />
-  </>
+    <Routes>
+      <Route path="/" element={<Books />} exact />
+      <Route path="/books" element={<Books />} exact />
+      <Route path="/categories" element={<Categories />} exact />
+      <Route path="*" element={<Error />} />
+    </Routes>
+  </Router>
 );
 
 export default App;
