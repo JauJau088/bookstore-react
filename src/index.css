@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.Flex-Row {
+  display: flex;
+}
+
+.Flex-Col {
+  display: flex;
+  flex-direction: column;
+}
+
+.Just-Center {
+  justify-content: center;
+}
+
+.Just-SpaceBetween {
+  justify-content: space-between;
+}
+
+.Align-Center {
+  align-items: center;
+}
