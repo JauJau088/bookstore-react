@@ -5,7 +5,7 @@ const AddBook = () => (
     <h2>ADD NEW BOOK</h2>
     <form Flex-Row Just-SpaceBetween>
       <input placeholder="Book title" />
-      <input placeholder="Category" />
+      <input placeholder="Author" />
       <button type="submit">ADD BOOK</button>
     </form>
   </div>
