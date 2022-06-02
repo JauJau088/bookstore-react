@@ -1,6 +1,7 @@
 import booksData from './data/booksData';
-import Book from './components/Book';
 import Navbar from './components/Navbar';
+import Book from './components/Book';
+import AddBook from './components/AddBook';
 
 const App = () => (
   <>
@@ -15,6 +16,7 @@ const App = () => (
         progress={e.progress}
       />
     ))}
+    <AddBook />
   </>
 );
 
