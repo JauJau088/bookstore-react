@@ -1,4 +1,4 @@
-// Actions
+// Action types
 const BOOK_ADD = 'bookstore/books/BOOK_ADD';
 const BOOK_REMOVE = 'bookstore/books/BOOK_REMOVE';
 
