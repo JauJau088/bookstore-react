@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
 const AddBook = () => {
-  const [title, setTitle] = useState();
-  const [author, setAuthor] = useState();
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
