@@ -1,9 +1,11 @@
+import booksData from '../../data/booksData';
+
 // Action types
 const BOOK_ADD = 'bookstore/books/BOOK_ADD';
 const BOOK_REMOVE = 'bookstore/books/BOOK_REMOVE';
 
 // Reducer
-const booksReducer = (state = [], action) => {
+const booksReducer = (state = booksData, action) => {
   switch (action.type) {
     case BOOK_ADD:
       return [
