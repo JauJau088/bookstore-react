@@ -13,7 +13,7 @@ const booksReducer = (state = booksData, action) => {
         action.book,
       ];
     case BOOK_REMOVE:
-      return [...state].filter((e) => e.book.id === action.book.id);
+      return [...state].filter((e) => e.id !== action.book.id);
     default:
       return state;
   }
@@ -22,9 +22,10 @@ const booksReducer = (state = booksData, action) => {
 export default booksReducer;
 
 // Action Creators
-export const addBook = (title, author) => ({
+export const addBook = (id, title, author) => ({
   type: BOOK_ADD,
   book: {
+    id,
     title,
     author,
   },

@@ -11,6 +11,7 @@ const Books = () => {
       {data.map((e) => (
         <Book
           key={e.id}
+          id={e.id}
           title={e.title}
           author={e.author}
           genre={e.genre}
