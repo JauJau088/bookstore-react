@@ -22,11 +22,11 @@ const booksReducer = (state = booksData, action) => {
 export default booksReducer;
 
 // Action Creators
-export const addBook = (id, title) => ({
+export const addBook = (title, author) => ({
   type: BOOK_ADD,
   book: {
-    id,
     title,
+    author,
   },
 });
 
