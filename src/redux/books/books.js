@@ -1,9 +1,11 @@
+import booksData from '../../data/booksData';
+
 // Action types
 const BOOK_ADD = 'bookstore/books/BOOK_ADD';
 const BOOK_REMOVE = 'bookstore/books/BOOK_REMOVE';
 
 // Reducer
-const booksReducer = (state = [], action) => {
+const booksReducer = (state = booksData, action) => {
   switch (action.type) {
     case BOOK_ADD:
       return [
@@ -11,7 +13,7 @@ const booksReducer = (state = [], action) => {
         action.book,
       ];
     case BOOK_REMOVE:
-      return [...state].filter((e) => e.book.id === action.book.id);
+      return [...state].filter((e) => e.id !== action.book.id);
     default:
       return state;
   }
@@ -20,11 +22,12 @@ const booksReducer = (state = [], action) => {
 export default booksReducer;
 
 // Action Creators
-export const addBook = (id, title) => ({
+export const addBook = (id, title, author) => ({
   type: BOOK_ADD,
   book: {
     id,
     title,
+    author,
   },
 });
 

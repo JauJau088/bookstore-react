@@ -1,9 +1,6 @@
 import React from 'react';
+import CheckStatus from '../components/CheckStatus';
 
-const Categories = () => (
-  <button type="button">
-    Check status
-  </button>
-);
+const Categories = () => <CheckStatus />;
 
 export default Categories;

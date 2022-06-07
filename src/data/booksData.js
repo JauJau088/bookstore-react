@@ -1,6 +1,6 @@
 const booksData = [
   {
-    id: 1,
+    id: 'fea8411e-60fd-455f-a165-cf55363787f7',
     title: 'The Hunger Games',
     author: 'Suzanne Collins',
     genre: 'Action',
@@ -8,7 +8,7 @@ const booksData = [
     progress: 64,
   },
   {
-    id: 2,
+    id: '85057945-5069-47ae-bc1b-4210739b9f0f',
     title: 'Dune',
     author: 'Frank Herbert',
     genre: 'Science Fiction',
@@ -16,7 +16,7 @@ const booksData = [
     progress: 8,
   },
   {
-    id: 3,
+    id: 'f56c718b-0397-4388-98d0-22ae7dd6e887',
     title: 'Capital in the Twenty-First Century',
     author: 'Suzanne Collins',
     genre: 'Economy',
