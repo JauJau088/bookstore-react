@@ -1,17 +1,16 @@
+// API
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
 const appId = 'kz7CRrzJE0EHSkY6yCS1';
 
 // Action types
 const BOOK_SHOW = 'bookstore/books/BOOK_SHOW';
-const BOOK_FETCH = 'bookstore/books/BOOK_FETCH';
-const BOOK_ADD = 'bookstore/books/BOOK_ADD';
 const BOOK_REMOVE = 'bookstore/books/BOOK_REMOVE';
 
 // Reducer
 const booksReducer = (state = {}, action) => {
   switch (action.type) {
     case BOOK_SHOW:
-      return action.data;
+      return action.data || state;
     case BOOK_REMOVE:
       return [...state].filter((e) => e.id !== action.book.id);
     default:
@@ -29,7 +28,7 @@ export const showBook = (data) => ({
 
 export const fetchBook = () => (
   (dispatch) => {
-    dispatch({ type: BOOK_FETCH });
+    // Fetch (GET) and dispatch showBook action
     fetch(`${url}${appId}/books`)
       .then((response) => response.json())
       .then((json) => dispatch(showBook(json)));
@@ -38,9 +37,8 @@ export const fetchBook = () => (
 
 export const addBook = (id, title, author, category = '-') => (
   (dispatch) => {
-    dispatch({ type: BOOK_ADD });
-
-    return fetch(`${url}${appId}/books`, {
+    // Fetch (POST) and dispatch showBook action
+    fetch(`${url}${appId}/books`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -52,20 +50,9 @@ export const addBook = (id, title, author, category = '-') => (
         category,
       }),
     })
-      .then(
-        (response) => dispatch(showBook(response)),
-      );
+      .then(() => dispatch(fetchBook()));
   }
 );
-
-export const addBookOld = (id, title, author) => ({
-  type: BOOK_ADD,
-  book: {
-    id,
-    title,
-    author,
-  },
-});
 
 export const removeBook = (id) => ({
   type: BOOK_REMOVE,
