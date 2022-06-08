@@ -8,7 +8,7 @@ const Books = () => {
 
   return (
     <>
-      {data.map((e) => (
+      {Object.keys(data).map((e) => (
         <Book
           key={e.id}
           id={e.id}

@@ -1,3 +1,6 @@
+// Base URL: https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi
+// My bookstore: kz7CRrzJE0EHSkY6yCS1
+
 const booksData = [
   {
     id: 'fea8411e-60fd-455f-a165-cf55363787f7',
