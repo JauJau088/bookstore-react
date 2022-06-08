@@ -10,13 +10,11 @@ const Books = () => {
     <>
       {Object.keys(data).map((e) => (
         <Book
-          key={e.id}
-          id={e.id}
-          title={e.title}
-          author={e.author}
-          genre={e.genre}
-          currentChapter={e.currentChapter}
-          progress={e.progress}
+          key={e}
+          id={e}
+          title={data[e][0].title}
+          author={data[e][0].author}
+          genre={data[e][0].category}
         />
       ))}
       <AddBook />

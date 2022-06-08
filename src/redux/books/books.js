@@ -12,11 +12,6 @@ const booksReducer = (state = {}, action) => {
   switch (action.type) {
     case BOOK_SHOW:
       return action.data;
-    case BOOK_ADD:
-      return [
-        ...state,
-        action.book,
-      ];
     case BOOK_REMOVE:
       return [...state].filter((e) => e.id !== action.book.id);
     default:
@@ -35,14 +30,35 @@ export const showBook = (data) => ({
 export const fetchBook = () => (
   (dispatch) => {
     dispatch({ type: BOOK_FETCH });
-
-    return fetch(`${url}${appId}/books`).then(
-      (response) => dispatch(showBook(response)),
-    );
+    fetch(`${url}${appId}/books`)
+      .then((response) => response.json())
+      .then((json) => dispatch(showBook(json)));
   }
 );
 
-export const addBook = (id, title, author) => ({
+export const addBook = (id, title, author, category = '-') => (
+  (dispatch) => {
+    dispatch({ type: BOOK_ADD });
+
+    return fetch(`${url}${appId}/books`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: id,
+        title,
+        author,
+        category,
+      }),
+    })
+      .then(
+        (response) => dispatch(showBook(response)),
+      );
+  }
+);
+
+export const addBookOld = (id, title, author) => ({
   type: BOOK_ADD,
   book: {
     id,

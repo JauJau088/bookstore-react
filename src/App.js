@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchBook } from './redux/books/books';
@@ -8,7 +8,8 @@ import Categories from './pages/Categories';
 import Error from './pages/Error';
 
 const App = () => {
-  useDispatch(fetchBook());
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(fetchBook()), []);
 
   return (
     <Router>
