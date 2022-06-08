@@ -4,15 +4,12 @@ const appId = 'kz7CRrzJE0EHSkY6yCS1';
 
 // Action types
 const BOOK_SHOW = 'bookstore/books/BOOK_SHOW';
-const BOOK_REMOVE = 'bookstore/books/BOOK_REMOVE';
 
 // Reducer
 const booksReducer = (state = {}, action) => {
   switch (action.type) {
     case BOOK_SHOW:
       return action.data || state;
-    case BOOK_REMOVE:
-      return [...state].filter((e) => e.id !== action.book.id);
     default:
       return state;
   }
@@ -28,7 +25,7 @@ export const showBook = (data) => ({
 
 export const fetchBook = () => (
   (dispatch) => {
-    // Fetch (GET) and dispatch showBook action
+    // Fetch (GET), then dispatch showBook action
     fetch(`${url}${appId}/books`)
       .then((response) => response.json())
       .then((json) => dispatch(showBook(json)));
@@ -37,7 +34,7 @@ export const fetchBook = () => (
 
 export const addBook = (id, title, author, category = '-') => (
   (dispatch) => {
-    // Fetch (POST) and dispatch showBook action
+    // Fetch (POST), then dispatch fetchBook action
     fetch(`${url}${appId}/books`, {
       method: 'POST',
       headers: {
@@ -54,9 +51,18 @@ export const addBook = (id, title, author, category = '-') => (
   }
 );
 
-export const removeBook = (id) => ({
-  type: BOOK_REMOVE,
-  book: {
-    id,
-  },
-});
+export const removeBook = (id) => (
+  (dispatch) => {
+    // Fetch (DELETE), then dispatch fetchBook action
+    fetch(`${url}${appId}/books/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        item_id: id,
+      }),
+    })
+      .then(() => dispatch(fetchBook()));
+  }
+);

@@ -9,6 +9,8 @@ import Error from './pages/Error';
 
 const App = () => {
   const dispatch = useDispatch();
+  // Dispatch fetchBook action on mount
+  // The empty array argument is to make sure it's only run once on initial render
   useEffect(() => dispatch(fetchBook()), []);
 
   return (
