@@ -1,1 +1,112 @@
-/* CSS */
+.BookContainer {
+  flex-wrap: wrap;
+  width: 80vw;
+  max-width: 1200px;
+  padding: 2rem;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: white;
+}
+
+.GroupBookInfo {
+  flex-basis: 400px;
+}
+
+.BookDetails-Genre {
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: grey;
+}
+
+.BookDetails-Title {
+  margin-top: 0.188rem;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.BookDetails-Author {
+  margin-top: 0.25rem;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.CommentRemoveEdit {
+  margin-top: 20px;
+}
+
+.CommentRemoveEdit button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+}
+
+.CommentRemoveEdit button:not(:last-child) {
+  padding-right: 18px;
+  border-right: 2px solid #e8e8e8;
+}
+
+.CommentRemoveEdit button:not(:first-child) {
+  padding-left: 18px;
+}
+
+.Circle {
+  transform: rotate(-90deg);
+}
+
+.Circle-Progress {
+  stroke-dasharray: 210;
+  stroke-dashoffset: 50;
+}
+
+.ProgressPercentage {
+  padding-bottom: 10px;
+}
+
+.ProgressPercentage-Percentage {
+  font-size: 32px;
+}
+
+.ProgressPercentage-Status {
+  font-size: 14px;
+  color: grey;
+}
+
+.Separator {
+  margin: 0 20px;
+  height: 70px;
+  border-right: 2px solid #e8e8e8;
+}
+
+.ChapterInfo-Current {
+  margin-bottom: 5px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  color: grey;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.ChapterInfo-Chapter {
+  margin-bottom: 22px;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: 300;
+}
+
+.UpdateProgressBtn {
+  padding: 8px 30px;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: 300;
+}

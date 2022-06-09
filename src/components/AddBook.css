@@ -1,0 +1,39 @@
+.AddBookContainer {
+  width: 100%;
+}
+
+.AddBookContainer form {
+  gap: 35px;
+}
+
+.AddBookContainer h2 {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: grey;
+}
+
+.AddBookContainer input {
+  padding: 12px 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.AddBookContainer button {
+  padding: 8px 30px;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.AddBookContainer input:first-child {
+  flex-grow: 1;
+}
+
+.AddBookContainer input::placeholder {
+  color: lightgrey;
+}

@@ -1,0 +1,10 @@
+.BooksContainer {
+  gap: 20px;
+  padding: 0 30px;
+}
+
+.BooksContainer hr {
+  width: 100%;
+  margin: 20px 0 10px 0;
+  border: 1px solid #e8e8e8;
+}
