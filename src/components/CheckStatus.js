@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
+import './CheckStatus.css';
 
 const CheckStatus = () => {
   const dispatch = useDispatch();
@@ -10,10 +11,11 @@ const CheckStatus = () => {
 
   return (
     <button
+      className="CheckStatus-Button"
       type="button"
       onClick={handleCheckStatus}
     >
-      Check status
+      CHECK STATUS
     </button>
   );
 };

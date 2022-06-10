@@ -1,0 +1,9 @@
+.CheckStatus-Button {
+  padding: 8px 30px;
+  background-color: #0290ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Roboto Slab', Arial, sans-serif;
+  font-weight: 400;
+}
