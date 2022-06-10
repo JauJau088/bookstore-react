@@ -1,15 +1,14 @@
 .BookContainer {
   flex-wrap: wrap;
-  width: 80vw;
-  max-width: 1200px;
-  padding: 2rem;
+  width: 100%;
+  padding: 2rem 1.688rem 1.75rem 1.688rem;
   border-radius: 4px;
   border: 1px solid #e8e8e8;
   background-color: white;
 }
 
 .GroupBookInfo {
-  flex-basis: 400px;
+  flex-grow: 1;
 }
 
 .BookDetails-Genre {
@@ -59,6 +58,10 @@
   padding-left: 18px;
 }
 
+.GroupProgress {
+  margin-right: 4.938rem;
+}
+
 .Circle {
   transform: rotate(-90deg);
 }
@@ -82,9 +85,13 @@
 }
 
 .Separator {
-  margin: 0 20px;
+  margin-right: 3.688rem;
   height: 70px;
   border-right: 2px solid #e8e8e8;
+}
+
+.GroupChapter {
+  width: 19rem;
 }
 
 .ChapterInfo-Current {
@@ -109,4 +116,10 @@
   color: white;
   font-family: 'Roboto Slab', Arial, sans-serif;
   font-weight: 300;
+}
+
+@media screen and (max-width: 1000px) {
+  .Separator {
+    display: none;
+  }
 }

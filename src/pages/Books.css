@@ -1,6 +1,8 @@
 .BooksContainer {
   gap: 20px;
-  padding: 0 30px;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 75rem;
 }
 
 .BooksContainer hr {
@@ -8,3 +10,10 @@
   margin: 20px 0 10px 0;
   border: 1px solid #e8e8e8;
 }
+
+@media screen and (min-width: 768px) {
+  .BooksContainer {
+    padding: 0 30px;
+  }
+}
+
