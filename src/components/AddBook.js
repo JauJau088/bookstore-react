@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
+import './AddBook.css';
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
@@ -16,7 +17,7 @@ const AddBook = () => {
   };
 
   return (
-    <div className="Flex-Col">
+    <div className="AddBookContainer Flex-Col">
       <h2>ADD NEW BOOK</h2>
       <form
         className="Flex-Row Just-SpaceBetween"

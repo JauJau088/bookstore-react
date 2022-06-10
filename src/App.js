@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { fetchBook } from './redux/books/books';
@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Books from './pages/Books';
 import Categories from './pages/Categories';
 import Error from './pages/Error';
+import Footer from './components/Footer';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/categories" element={<Categories />} exact />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

@@ -32,7 +32,7 @@ export const fetchBook = () => (
   }
 );
 
-export const addBook = (id, title, author, category = '-') => (
+export const addBook = (id, title, author, category = 'Genre') => (
   (dispatch) => {
     // Fetch (POST), then dispatch fetchBook action
     fetch(`${url}${appId}/books`, {
